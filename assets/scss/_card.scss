@@ -1,0 +1,77 @@
+.card {
+    position : relative;
+    max-width: 300px;
+    height   : 260px;
+    margin   : 30px 10px;
+    @include glass;
+    padding   : 20px 15px;
+    text-align: center;
+    @include flex-aj(center, center);
+    flex-direction: column;
+    @include shadow;
+    transition           : 0.4s ease-in-out;
+    -webkit-transition   : 0.4s ease-in-out;
+    -moz-transition      : 0.4s ease-in-out;
+    -ms-transition       : 0.4s ease-in-out;
+    -o-transition        : 0.4s ease-in-out;
+    border-radius        : 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius   : 4px;
+    -ms-border-radius    : 4px;
+    -o-border-radius     : 4px;
+
+    .imagebox {
+        position: absolute;
+        width   : 200px;
+        height  : 200px;
+        top     : -30px;
+        z-index : 2;
+
+        img {
+            max-width  : 100%;
+            height     : 100%;
+            object-fit : cover;
+            user-select: none;
+            @include glass;
+
+        }
+    }
+
+    .content {
+        color             : $primery-text-color;
+        position          : relative;
+        margin-top        : -100px;
+        padding           : 10px 15px;
+        visibility        : hidden;
+        opacity           : 0;
+        transition        : 0.2s ease-in-out;
+        -webkit-transition: 0.2s ease-in-out;
+        -moz-transition   : 0.2s ease-in-out;
+        -ms-transition    : 0.2s ease-in-out;
+        -o-transition     : 0.2s ease-in-out;
+
+        h1 {
+            font-weight: 900;
+            color      : $secondry-color;
+            user-select: none;
+        }
+
+        p {
+            user-select: none;
+        }
+    }
+
+    &:hover {
+        height: 420px;
+
+    }
+
+    &:hover .content {
+        visibility      : visible;
+        opacity         : 1;
+        margin-top      : 150px;
+        transition-delay: 0.2s;
+
+    }
+
+}
